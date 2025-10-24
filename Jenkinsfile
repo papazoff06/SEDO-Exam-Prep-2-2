@@ -1,15 +1,9 @@
 pipeline {
     agent any 
     stages {
-        stage('Restore .net packages') {
-            steps {
-                bat 'dotnet restore' //for Win
-            }
-        }
-
         stage('Build project') {
             steps {
-                bat 'dotnet build --no-restore'
+                bat 'dotnet build'
             }
         }
 
